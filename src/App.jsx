@@ -67,42 +67,55 @@ import './App.css';
 
 /* liste de produits*/
 
-const products = [
-  { title: 'Choux', isFruit: false, id: 1 },
-  { title: 'Ail', isFruit: false, id: 2 },
-  { title: 'Pomme', isFruit: true, id: 3 },
-  { title: 'Orange', isFruit: true, id: 4 },
-];
+// const products = [
+//   { title: 'Choux', isFruit: false, id: 1 },
+//   { title: 'Ail', isFruit: false, id: 2 },
+//   { title: 'Pomme', isFruit: true, id: 3 },
+//   { title: 'Orange', isFruit: true, id: 4 },
+// ];
 
 
-  function ShoppingList() {
-    //key pour permettre le CRUD facilement apres
-    const listItems = products.map(product =>
-      <li
-        key={product.id}
-        style={{
-          color: product.isFruit ? 'magenta' : 'darkgreen'
-        }}
-      >
-        {product.title}
-      </li>
-    );
+//   function ShoppingList() {
+//     //key pour permettre le CRUD facilement apres
+//     const listItems = products.map(product =>
+//       <li
+//         key={product.id}
+//         style={{
+//           color: product.isFruit ? 'magenta' : 'darkgreen'
+//         }}
+//       >
+//         {product.title}
+//       </li>
+//     );
   
-    return (
-      <ul>{listItems}</ul>
-    );
-  }
+//     return (
+//       <ul>{listItems}</ul>
+//     );
+//   }
+
+// function App() {
+//   return (
+//     <>
+//     {ShoppingList()}
+//     </>
+//   );
+// }
+
+/* repondre aux eenements*/ 
+function handleClick() {
+  alert('Click effectue');
+}
 
 function App() {
   return (
     <>
-    {ShoppingList()}
+    {/* pas de parenthese apres handleClick  */}
+    <button onClick={handleClick}>
+      Click me
+    </button>
     </>
   );
 }
-
-
-
 
 
 
