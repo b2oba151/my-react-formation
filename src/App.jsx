@@ -4,22 +4,35 @@ import viteLogo from '/vite.svg';
 import './App.css';
 
 const products = [
-  { title: 'Choux', id: 1 },
-  { title: 'Ail', id: 2 },
-  { title: 'Pomme', id: 3 },
-  { title: 'Orange', id: 4 },
+  { title: 'Choux', isFruit: false, id: 1 },
+  { title: 'Ail', isFruit: false, id: 2 },
+  { title: 'Pomme', isFruit: true, id: 3 },
+  { title: 'Orange', isFruit: true, id: 4 },
 ];
 
 
-const listItems = products.map(product =>
-  //key pour permettre le CRUD facilement apres
-  <li key={product.id}> {product.title}</li> 
-  );
+  function ShoppingList() {
+    //key pour permettre le CRUD facilement apres
+    const listItems = products.map(product =>
+      <li
+        key={product.id}
+        style={{
+          color: product.isFruit ? 'magenta' : 'darkgreen'
+        }}
+      >
+        {product.title}
+      </li>
+    );
+  
+    return (
+      <ul>{listItems}</ul>
+    );
+  }
 
 function App() {
   return (
     <>
-    <ul>{listItems}</ul>
+    {ShoppingList()}
     </>
   );
 }
