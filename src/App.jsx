@@ -43,19 +43,6 @@ function MyConditionElementNoOk() {
   );
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 function App() {
   const user = {
     name: 'Hedy Lamarr',
@@ -63,23 +50,11 @@ function App() {
     imageSize: 100,
   };
 
-  let content;
-
-  if (user.name == 'Hedy Lamarr') {
-    content = <MyContent user={user} />;
-  } else {
-    content = <MyConditionElementNoOk />;
-  }
 
   return (
     <div>
       <Greeting />
-      <hr/><h3>Utilisation de if </h3>
-      {content}
-      <hr/><h3>Utilisation de l'opérateur ternaire </h3>
       {user ? <MyContent user={user} /> : <MyConditionElementNoOk />}
-      <hr/> <h3> Utilisation de l'opérateur && </h3>
-      {user && <MyContent user={user} />} 
     </div>
   );
 }
